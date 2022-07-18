@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# bspwm
+mkdir -p $HOME/.config/bspwm
+ln -s $PWD/bspwmrc $HOME/.config/bspwm/bspwmrc 2>/dev/null \
+	&& chmod +x $HOME/.config/bspwm/bspwmrc \
+	&& echo "Installing bspwm config" \
+	|| echo "Bspwm is already configured"
+
+# sxhkd
+mkdir -p $HOME/.config/sxhkd
+ln -s $PWD/sxhkdrc $HOME/.config/sxhkd/sxhkdrc 2>/dev/null \
+	&& chmod +x $HOME/.config/sxhkd/sxhkdrc \
+	&& echo "Installing sxhkd config" \
+	|| echo "Sxhkd is already configured"

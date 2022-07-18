@@ -1,0 +1,3 @@
+dunst &
+sxhkd &
+setxkbmap -layout "us,cz(qwerty)" -option "caps:escape" -option "grp:win_space_toggle"
