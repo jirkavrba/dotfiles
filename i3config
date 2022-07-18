@@ -186,7 +186,8 @@ mode "resize" {
 }
 
 mode "power" {
-	bindsym l exec "systemctl hibernate"
+	bindsym l exec "betterlockscreen -l"; mode "default"
+	bindsym Shift+l exec "betterlockscreen -l ; systemctl suspend"; mode "default"
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
