@@ -13,3 +13,10 @@ ln -s $PWD/sxhkdrc $HOME/.config/sxhkd/sxhkdrc 2>/dev/null \
 	&& chmod +x $HOME/.config/sxhkd/sxhkdrc \
 	&& echo "Installing sxhkd config" \
 	|| echo "Sxhkd is already configured"
+
+# i3
+mkdir -p $HOME/.config/i3
+ln -s $PWD/i3config $HOME/.config/i3/config 2>/dev/null \
+	&& chmod +x $HOME/.config/i3/config \
+	&& echo "Installing i3 config" \
+	|| echo "I3 is already configured"
