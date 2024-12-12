@@ -1,0 +1,13 @@
+[general]
+import = [
+	"alacritty-theme/themes/afterglow.toml"
+]
+
+[font]
+size = 6
+normal = { family = "JetBrains Mono", style = "Regular" }
+
+[window]
+padding = { x = 6, y = 6 }
+opacity = 0.8
+

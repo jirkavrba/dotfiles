@@ -161,13 +161,6 @@ interface-type = wireless
 label-connected = %{F#9BB553}NET%{F-} %essid% %local_ip%
 
 
-[module/vpn]
-type = custom/script
-exec = twingate status
-interval = 5 
-format-prefix = "VPN "
-format-prefix-foreground = ${colors.primary}
-
 [module/date]
 type = internal/date
 interval = 1
