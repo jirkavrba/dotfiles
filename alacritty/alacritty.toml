@@ -4,10 +4,10 @@ import = [
 ]
 
 [font]
-size = 6
+size = 10 
 normal = { family = "JetBrains Mono", style = "Regular" }
 
 [window]
 padding = { x = 6, y = 6 }
-opacity = 0.8
+opacity = 0.98
 
