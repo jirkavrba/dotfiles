@@ -11,8 +11,8 @@
   "modules-right": [
     "idle_inhibitor",
     "pulseaudio",
-    "network",
-    "power-profiles-daemon",
+    "network#wifi",
+    "network#vpn",
     "cpu",
     "memory",
     "temperature",
@@ -42,24 +42,22 @@
     "format-alt": "{:%Y-%m-%d}"
   },
   "cpu": {
-    "format": "{usage}% ",
+    "format": "CPU {usage}%",
     "tooltip": false
   },
   "memory": {
-    "format": "{}% "
+    "format": "RAM {}%"
   },
   "temperature": {
     // "thermal-zone": 2,
     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
-    "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""]
+    "format": "TEMP {temperatureC}°C"
   },
   "backlight": {
     // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format": "DISPLAY {percent}%"
   },
   "battery": {
     "states": {
@@ -67,11 +65,10 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
+    "format": "BATT {capacity}%",
+    "format-full": "FULL {capacity}%",
+    "format-charging": "CHAR {capacity}%",
+    "format-plugged": "PLUG {capacity}%",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": ["", "", "", "", ""]
@@ -79,42 +76,27 @@
   "battery#bat2": {
     "bat": "BAT2"
   },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
+  "network#wifi": {
+    "interface": "wlan0", 
+    "format-wifi": "WIFI {essid} ({signalStrength}%)",
+    "format-ethernet": "ETH {ipaddr}/{cidr}",
+    "format-linked": "LINK {ifname} (No IP)",
+    "format-disconnected": "NET Disconnected"
   },
-  "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  "network#vpn": {
+    "interface": "vpn0", 
+    "format-ethernet": "VPN {ipaddr}/{cidr}",
+    "format-linked": "VPN Linked",
+    "format-disconnected": "VPN Disconnected"
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
+    "format": "VOL {volume}% {format_source}",
+    "format-bluetooth": "VOL {volume}%  {format_source}",
+    "format-bluetooth-muted": "VOL MUTED  {format_source}",
+    "format-muted": "VOL MUTED {format_source}",
+    "format-source": "MIC {volume}%",
+    "format-source-muted": "MIC MUTED"
     },
     "on-click": "pavucontrol"
   },

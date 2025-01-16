@@ -1,0 +1,14 @@
+* {
+	font-family: "JetBrains Mono Nerd Font";	
+}
+
+window#waybar {
+	background: #000000;
+	border: none;
+}
+
+.module {
+	color: #ffffff;
+	background: #000000;
+	padding: 0 20px;
+}
