@@ -12,3 +12,23 @@ window#waybar {
 	background: #000000;
 	padding: 0 20px;
 }
+
+#workspaces button {
+	color: #ffffff;
+}
+
+#workspaces button.active {
+	color: #00ff00;
+}
+
+#workspaces button.urgent {
+	color: #ff0000;
+}
+
+#network.wifi, #newtwork.ethernet { 
+	color: #00ff00;
+}
+
+#network.disconnected, #network.linked {
+	color: #ff0000;
+}
